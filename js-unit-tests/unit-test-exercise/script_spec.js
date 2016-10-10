@@ -17,11 +17,10 @@ describe('Gets raw number from CSS measurement Unit', function () {
         expect(getRawNumberFromCSSUnit('.7')).toBe(0.7);
     })
 
-    it('do not passed', function () {
-        expect(getRawNumberFromCSSUnit('nie')).toBe(NaN);
-    })
     it('passed', function () {
-        expect(getRawNumberFromCSSUnit(100)).toBe(NaN);
+        var throwing = function () { getRawNumberFromCSSUnit(1234) }
+        
+        expect(throwing).toThrow();
     })
     /**
      * List of missing test cases:
@@ -33,6 +32,10 @@ describe('Gets raw number from CSS measurement Unit', function () {
 });
 
 describe('FizzBuzzNumber returns', function () {
+     it('passed', function () {
+        expect(fizBuzzNumber(0.5)).toBe(0.5);
+    })
+    
     /**
      * List of missing test cases:
      * - test far all possible return options (remember about integers and floating point numbers as arguments)
